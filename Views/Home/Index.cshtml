@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Добро пожаловать!</h1>
+    <p class="lead">Управляйте рабочими местами, работниками и технологическими операциями</p>
+    <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Workplace")" role="button">Рабочие места</a></p>
+    <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Employee")" role="button">Сотрудники</a></p>
+    <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Operation")" role="button">Технологические операции</a></p>
+    <a href="@Url.Action("ExportToExcel", "Home")" class="btn btn-primary mr-2">Экспортировать</a>
+    <div style="display: flex;">
+
+        @using (Html.BeginForm("ImportFromExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-group" style="margin-top: 10px;">
+                <input type="file" name="file" id="file" class="form-control-file mr-2" style="width: auto;" />
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Импортировать</button>
+    </div>
+</div>
+    
