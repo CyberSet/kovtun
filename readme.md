@@ -1,1 +1,1 @@
-![1](/mountPhoto.png)
+![1](/mountPhoto.jpg)
